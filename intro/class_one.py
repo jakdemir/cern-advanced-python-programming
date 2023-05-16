@@ -1,5 +1,6 @@
 '''
 Hellow WOrld
+https://indico.cern.ch/event/884989/contributions/3732167/attachments/1991200/3331806/Advanced_Programming_with_Python.pdf
 '''
 import this
 
@@ -12,16 +13,12 @@ y = x
 
 x = -5
 
+
 if x > 0:
     label = 'Pos'
 else:
     label = 'Neg'
 print(label)
-
-'''
-Create a python dicitionary of 5 countries and capitals:
-'''
-
 
 x = - 5
 label = 'Pos' if x > 0 else 'Neg'
@@ -136,3 +133,191 @@ print(next(x))
 print(next(x))
 print(x)
 print(list(x))
+
+
+def add_item(item, items=[]):
+    items.append(item)
+    return items
+    
+if __name__ == '__main__':
+    v = add_item(1)
+    print(add_item(2))
+    print(add_item(3))
+    
+my_list = [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5]
+
+filtered_list = filter(lambda x: x > 0, my_list)
+
+print(filtered_list)
+
+for el in filtered_list:
+    print(el)
+    
+print(list(filtered_list))
+print(list(filter(lambda x: x > 0, my_list)))
+print(list(map(lambda x: abs(x), my_list)))
+
+lst1 = [0,1,2,3,4]
+lst2 = [5,6,7,8]
+print(list(map(lambda x, y: x + y, lst1, lst2)))
+
+print(sum([0,1,2,3,4,5,6,7,8,9,10]))
+
+from functools import reduce
+print(reduce(lambda x, y: x + y, [0,1,2,3,4,5,6,7,8,9,10]))
+
+i = 0
+for el in [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5]:
+    print(i, el)
+    i += 1
+
+for index, el in enumerate([-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5]):
+    print(index, el)
+        
+letters = ['a', 'b', 'c', 'd']
+numbers = [1,2,3,4,5]
+for l,n in zip(letters, numbers):
+    print(l,n)
+
+print(list(zip(letters, numbers)))
+print(dict(zip(letters, numbers)))
+
+#help(zip)
+
+x = [1,2,3,4]
+y = x
+y[0] = 'a'
+print(x, y)
+
+x = [1,2,3,4]
+y = x.copy()
+y[0] = 'a'
+print(x, y)
+
+x = [[1, 'a'] ,2,3,4]
+y = x[:]
+y[0] = 'a'
+print(x, y)
+
+x = [[1, 'a'] ,2,3,4]
+y = x.copy()
+y[0][0] = 'b'
+print(x,y)
+
+from copy import deepcopy
+x = [[1, 'a'], 2,3,4]
+y= deepcopy(x)
+y[0][0] = 'b'
+print(x, y)
+
+x = [1, 10 ,2 , 9,3,8,4,6,5]
+x = x.sort()
+print(x)
+
+
+x = [1, 10, 2, 9, 3, 8, 4, 6, 5]
+x.sort()
+print(x)
+
+x = [1, 10, 2, 9, 3, 8, 4, 6, 5]
+x = sorted(x)
+print(x)
+
+x = [1, 10, 2, 9, 3, 8, 4, 6, 5] 
+print(x is sorted(x))
+
+x = [1, 10, 2, 9, 3, 8, 4, 6, 5]
+x.sort(reverse = True)
+print(x)
+
+employees = [(111, 'John'), (123, 'Emily'), (232, 'David'), (100, 'Mark'), (1, 'Andrew')] 
+employees.sort(key=lambda x: x[0])
+print(employees)
+
+employees.sort(key = lambda x  : x[1])
+print(employees)
+
+
+employees.sort(key = lambda x  : x[1], reverse = True)
+print(employees)
+
+my_list = 5*['a']
+print(my_list)
+
+print(3 in [1,2,3,4,5])
+
+x = ['a']
+y = ['a']
+print (x == y)
+
+x = ('a')
+y = ('a')
+print(x is y)
+
+my_tuple = (1,2,3)
+print(my_tuple)
+
+print(my_tuple[0])
+#my_tuple[0]=0 
+
+print(tuple([1,2,3]))
+
+print({1,2,3,4})
+print({1,2,3,4,4,4,4})
+
+my_list = [1,2,3,4,4,4,4]
+set(my_list)
+
+A = {1,2,3}
+B = {3,4,5}
+
+print(f'A+B={A.union(B)}')
+print(f'A-B={A-B}')
+print(f'A*B={A.intersection(B)}')
+print(f'A*0={A.intersection({})}')
+print(f'A|B={A|B}')
+
+pm = {'system', 'source', 'I_MEAS', 'I_REF'} 
+signals = pm - {'system', 'source'} 
+print(signals)
+
+#help(set)
+
+#signals[0]
+
+print(next(iter(signals)))
+list(signals)[0]
+
+first, second = [1,2]
+print(first, second)
+
+first_S, second_S = {1,2}
+print(first_S, second_S)
+
+
+employees = [(111, 'John'), (123, 'Emily'), (232, 'David'), (100, 'Mark'), (1, 'Andrew')] 
+
+for employee_id, employee_name in employees:
+    print(employee_id, employee_name)
+
+
+empty_set = {}
+print (type(empty_set))
+
+empty_set = set()
+print (type(empty_set))
+
+empty_set = ()
+print (type(empty_set))
+
+
+my_dict = {'a': 1, 'b': 2, 'c': 3, 'd': 4}
+print(my_dict)
+
+print(my_dict['a'])
+
+for key in my_dict:
+    print(key, my_dict[key])
+    
+for key, value in my_dict.items():
+    print(key, value)
